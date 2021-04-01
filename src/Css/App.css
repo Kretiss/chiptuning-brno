@@ -1,0 +1,324 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+	src:  url('../webfonts/OpenSans-Regular.woff2') format('woff2'),
+        url('../webfonts/OpenSans-Regular.woff') format('woff'),
+        url('../webfonts/OpenSans-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans Bold';
+  font-style: normal;
+  font-weight: 600;
+	src:  url('../webfonts/OpenSans-SemiBold.woff2') format('woff2'),
+        url('../webfonts/OpenSans-SemiBold.woff') format('woff'),
+        url('../webfonts/OpenSans-SemiBold.ttf') format('ttf');
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+:root{
+  --header-height: 70px;
+  --orange: #FF7F00;
+  --black: #141414;
+  --white: #FFFFFF;
+  --gray: #3D3D3D;
+  --lighter-gray: #5C5C5C;
+  --darker-gray: #292929;
+  --menuBtnColor: white;
+}
+
+body{
+  margin-top: var(--header-height);
+}
+
+body,
+footer{
+  font-family: 'Open Sans', sans-serif;
+}
+
+header{
+  font-family: 'Open Sans Bold', sans-serif;
+}
+
+main{
+  min-height: calc(100vh - 125px);
+}
+
+main a[href^="http"]::after{
+  font-family: "Font Awesome 5 Free";
+  content: "\f35d";
+  font-weight: 900;
+  padding-left: 4px;
+}
+
+.container{
+  margin: 0 auto;
+  width: 96%;
+  height: 100%;
+  max-width: 1350px;
+}
+
+/*  HEADER  */
+/*  HEADER  */
+/*  HEADER  */
+
+.logo,
+.logo img{
+  height: calc(var(--header-height)/1.2);
+}
+
+.menuSecondLogo{
+  margin-bottom: 50px;
+}
+
+.menuSecondLogo:is(:hover/*, :focus*/)::after{
+  width: 50px;
+}
+
+.menuSecondLogo img{
+  height: calc(var(--header-height)/1.5);
+  max-height: 45px;
+  width: auto;
+}
+
+.navButton{
+  /*background-color: var(--darker-gray);*/
+  height: calc(var(--header-height)/1.35);
+  width: calc(var(--header-height)/1.35);
+  color: var(--menuBtnColor);
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7em;
+  transition: all 0.3s;
+}
+
+.navButtonHamburger{
+  height: 4px;
+  width: 34px;
+  margin: 0 auto;
+  background-color: var(--menuBtnColor);
+  border-radius: 3px;
+  position: relative;
+  transition: all 0.5s;
+  color:inherit;
+}
+
+.navButtonHamburger::before,
+.navButtonHamburger::after{
+  height: 4px;
+  width: 34px;
+  position: absolute;
+  background-color: var(--menuBtnColor);
+  border-radius: 3px;
+  content: "";
+  display: block;
+  transition: all 0.5s;
+}
+
+.navButtonHamburger::before{
+  transform: translateY(-12px);
+}
+
+.navButtonHamburger::after{
+  transform: translateY(12px);
+}
+
+.navButton:is(:hover, /*:focus,*/ .active){
+  --menuBtnColor: #FF7F00;
+}
+
+.navButton.active .navButtonHamburger{
+  background-color: transparent;
+}
+
+.navButton.active .navButtonHamburger::before{
+  transform: rotate(135deg) translateX(7px) translateY(4px);
+  width: 25px;
+}
+
+.navButton.active .navButtonHamburger::after{
+  transform: rotate(-135deg) translateX(-7px) translateY(4px);
+  width: 25px;
+}
+
+
+
+header .container{
+  padding: 0 2.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header{
+  height: var(--header-height);
+  position: fixed;
+  z-index: 2;
+  top:0;
+  left:0;
+  right: 0;
+  background-color: var(--black);
+  color: var(--white);
+  /*border-bottom: 2px solid var(--orange);*/
+}
+
+header nav{
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  box-shadow: 0px 2px 3px var(--orange);
+  overflow: auto;
+  background-color: var(--darker-gray);
+}
+
+header nav ul{
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+}
+
+header nav a{
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px 0;
+  margin: 5px 0;
+  /*background-color: var(--gray);*/
+  color: var(--white);
+  transition: color 0.3s;
+  position: relative;
+  outline: none;
+}
+
+header nav a:hover,
+header nav a:focus,
+header nav a.active{
+  /*background-color: var(--darker-gray);*/
+  color: var(--orange);
+}
+
+header nav a::after{
+  transition: all 0.3s;
+  height: 0;
+  width: 0;
+  background-color: var(--orange);
+  content: "";
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+
+header nav a:is(:hover, /*:focus,*/ .active)::after{
+  height: 2px;
+  width: 35px;
+/*  background-color: var(--orange);
+  content: "";
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;*/
+}
+
+
+/* SLIDER */
+/* SLIDER */
+/* SLIDER */
+
+
+.sliderContainer{
+  width: 100%;
+  min-height: calc(70vh - var(--header-height));
+}
+
+
+
+
+
+/* FOOTER */
+/* FOOTER */
+/* FOOTER */
+
+footer{
+  background-color: var(--darker-gray);
+  width: 100%;
+  min-height: 100px;
+}
+
+
+@media only screen and (min-width: 768px){
+  :root{
+    --header-height: 75px;
+  }
+
+  header .container{
+    padding: 0;
+  }
+
+  .navButton{
+    display: none;
+  }
+
+  header nav{
+    display: block;
+    position: static;
+    height: var(--header-height) !important;
+    overflow: hidden;
+    opacity: 1 !important;
+    box-shadow: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  header nav ul{
+    display: flex;
+    margin: 0;
+  }
+
+  header nav ul a{
+    margin: 0 8px;
+    padding: 0 5px;
+    line-height: var(--header-height);
+  }
+
+  header nav a::after{
+    bottom: 23px;
+  }
+
+  .menuSecondLogo::after{
+    bottom: 0px;
+  }
+
+  .menuSecondLogo{
+    margin: 0 0 0 10px;
+    padding: 0;
+  }
+
+}
+
+@media only screen and (min-width: 1280px){
+  :root{
+    --header-height: 80px;
+  }
+
+  header nav a::after{
+    bottom: 25px;
+  }
+
+}
