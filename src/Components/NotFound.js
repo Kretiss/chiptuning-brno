@@ -3,7 +3,7 @@ import React from 'react';
 
 const NotFound = () => {
   return(
-    <div></div>
+    <p className="didntFound">Stránka nenalezena</p>
   );
 }
 

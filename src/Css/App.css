@@ -16,6 +16,15 @@
         url('../webfonts/OpenSans-SemiBold.ttf') format('ttf');
 }
 
+@font-face {
+  font-family: 'Open Sans Italic';
+  font-style: normal;
+  font-weight: 600;
+	src:  url('../webfonts/OpenSans-Italic.woff2') format('woff2'),
+        url('../webfonts/OpenSans-Italic.woff') format('woff'),
+        url('../webfonts/OpenSans-Italic.ttf') format('ttf');
+}
+
 *,
 *::before,
 *::after{
@@ -31,6 +40,7 @@
   --lighter-gray: #5C5C5C;
   --darker-gray: #292929;
   --menuBtnColor: white;
+  --max-continer-width: 1350px;
 }
 
 body{
@@ -57,11 +67,12 @@ main a[href^="http"]::after{
   padding-left: 4px;
 }
 
+
 .container{
   margin: 0 auto;
   width: 96%;
   height: 100%;
-  max-width: 1350px;
+  max-width: var(--max-continer-width);
 }
 
 /*  HEADER  */
@@ -77,7 +88,7 @@ main a[href^="http"]::after{
   margin-bottom: 50px;
 }
 
-.menuSecondLogo:is(:hover/*, :focus*/)::after{
+.menuSecondLogo:is(:hover)::after{
   width: 50px;
 }
 
@@ -88,7 +99,6 @@ main a[href^="http"]::after{
 }
 
 .navButton{
-  /*background-color: var(--darker-gray);*/
   height: calc(var(--header-height)/1.35);
   width: calc(var(--header-height)/1.35);
   color: var(--menuBtnColor);
@@ -132,7 +142,7 @@ main a[href^="http"]::after{
   transform: translateY(12px);
 }
 
-.navButton:is(:hover, /*:focus,*/ .active){
+.navButton:is(:hover, .active){
   --menuBtnColor: #FF7F00;
 }
 
@@ -168,7 +178,6 @@ header{
   right: 0;
   background-color: var(--black);
   color: var(--white);
-  /*border-bottom: 2px solid var(--orange);*/
 }
 
 header nav{
@@ -179,6 +188,7 @@ header nav{
   box-shadow: 0px 2px 3px var(--orange);
   overflow: auto;
   background-color: var(--darker-gray);
+  z-index: 10;
 }
 
 header nav ul{
@@ -193,7 +203,6 @@ header nav a{
   text-align: center;
   padding: 15px 0;
   margin: 5px 0;
-  /*background-color: var(--gray);*/
   color: var(--white);
   transition: color 0.3s;
   position: relative;
@@ -203,7 +212,6 @@ header nav a{
 header nav a:hover,
 header nav a:focus,
 header nav a.active{
-  /*background-color: var(--darker-gray);*/
   color: var(--orange);
 }
 
@@ -221,17 +229,9 @@ header nav a::after{
   right: 0;
 }
 
-header nav a:is(:hover, /*:focus,*/ .active)::after{
+header nav a:is(:hover, .active)::after{
   height: 2px;
   width: 35px;
-/*  background-color: var(--orange);
-  content: "";
-  display: block;
-  margin: 0 auto;
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;*/
 }
 
 
@@ -242,12 +242,247 @@ header nav a:is(:hover, /*:focus,*/ .active)::after{
 
 .sliderContainer{
   width: 100%;
-  min-height: calc(70vh - var(--header-height));
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  background-color: black;
+}
+
+.sliderContainer::after{
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0, .65);
+}
+
+.sliderVideo{
+  height: 100%;
+  position: relative;
+}
+
+.sliderVideo video{
+  position: absolute;
+  top:-20%;
+  left:-20%;
+  width: 140%;
+  height: 140%;
+  object-fit: cover;
+}
+
+.sliderText{
+  position: absolute;
+  top:22%;
+  left:0;
+  right: 0;
+  color: white;
+  z-index: 1;
+  margin: 0 auto;
+  max-width: 90%;
+  text-align: center;
+}
+
+.sliderText h1{
+  color: var(--orange);
+  text-align: inherit;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.sliderText h1 span{
+  position: relative;
+}
+
+.sliderText h1 span::after{
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: var(--orange);
+  width: 104px;
+  position: absolute;
+  top: 90%;
+  left: 0;
+}
+
+.sliderText h1::before{
+  content: "QUANTUM CARS / TRUCKS BRNO";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  color: #777;
+  bottom: 100%;
+  font-size: 8pt;
+}
+
+.sliderText p{
+  font-size: 12.5pt;
+  margin-top: 3%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: inherit;
+}
+
+.index{
+  background-color: #F8F8F8;
+  overflow: auto;
+  padding-bottom: 50px;
+}
+
+.indexHeader2{
+  text-align: center;
+  color: var(--orange);
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.about{
+  counter-reset: paragraph;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.about p{
+  position: relative;
+  width: 85%;
+  max-width: 280px;
+  margin: 22px 2%;
+  padding: 0 10px 0 25px;
+  text-align: center;
+  font-family: 'Open Sans Bold', sans-serif;
+}
+
+.about p::before{
+  counter-increment: paragraph;
+  content: counter(paragraph);
+  position: absolute;
+  top: 0px;
+  left: -10px;
+  font-size: 30pt;
+  color: var(--orange);
+}
+
+.whyWe p::before{
+  content: "#";
 }
 
 
+.chiptuningTypes{
+  background-color: #F8F8F8;
+  overflow: auto;
+}
 
+.indexHeader1{
+  text-align: center;
+  color: var(--orange);
+  font-size: 22pt;
+  padding: 0 2%;
+}
 
+.card{
+  background-color: #EBEBEB;
+  padding: 15px 20px;
+  border-radius: 4px;
+  margin: 35px auto;
+  color: black;
+  width: 95%;
+  max-width: 500px;
+}
+
+.cardHeader{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cardHeader img{
+  width: 160px;
+  margin: 0 auto;
+}
+
+.cardText{
+  text-align: center;
+  font-family: 'Open Sans Bold', sans-serif;
+}
+
+.cardText a{
+  display: block;
+  width: fit-content;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  padding: 8px 10px;
+  margin: 10px auto;
+  background-color: var(--orange);
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  outline: none;
+  transition: all 0.1s linear;
+}
+
+.cardText a:hover{
+  transform: scale3d(1.05, 1.05, 1.05);
+}
+
+.contact .card h3{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.contact .card{
+  width: 90%;
+  max-width: 550px;
+}
+
+.contact .card ul{
+  padding-left: 5%;
+}
+
+.contact .card li{
+  list-style: none;
+}
+
+.contact .card .bold{
+  font-family: 'Open Sans Bold', sans-serif;
+  margin-top: 8px;
+}
+
+.contact .card iframe{
+  border: 0;
+  display: block;
+  width: 100%;
+  height: 250px;
+}
+
+.moreInfo{
+  text-align: center;
+  font-family: 'Open Sans Italic', sans-serif;
+  font-size: 90%;
+}
+
+.moreInfo a{
+  text-decoration: none;
+  outline: none;
+  color: var(--orange);
+}
+
+.moreInfo a:hover{
+  color: var(--lighter-gray);
+}
+
+.didntFound{
+  margin-top: 150px;
+  text-align: center;
+  color: var(--orange);
+  font-size: 20pt;
+  font-family: 'Open Sans Bold', sans-serif;
+}
 
 /* FOOTER */
 /* FOOTER */
@@ -257,6 +492,47 @@ footer{
   background-color: var(--darker-gray);
   width: 100%;
   min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+footer p{
+  text-align: center;
+  color: var(--lighter-gray);
+}
+
+
+@media only screen and (min-width: 568px){
+  .card{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .contact .card{
+    display: block;
+    width: 48%;
+  }
+
+  .contact .cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .cardHeader,
+  .cardText{
+    margin: 0 2%;
+  }
+
+  .cardText{
+    margin-top: 15px;
+    margin-left: 35px;
+    text-align: left;
+  }
+
 }
 
 
@@ -310,6 +586,56 @@ footer{
     padding: 0;
   }
 
+
+  .sliderText{
+    max-width: var(--max-continer-width);
+    margin-top: 2%;
+    width: 95%;
+  }
+
+  .sliderText h1{
+    font-size: 28pt;
+  }
+
+  .sliderText p{
+    font-size: 13.5pt;
+  }
+
+  .sliderText h1::before{
+    font-size: 8.5pt;
+  }
+
+  .chiptuningTypes h1{
+    font-size: 26pt;
+  }
+
+}
+
+@media only screen and (min-width: 1024px){
+  .cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .card{
+    width: 45%;
+    margin: 20px;
+  }
+
+  .sliderText h1{
+    font-size: 35pt;
+  }
+
+  .sliderText p{
+    font-size: 15pt;
+  }
+
+  .sliderText h1::before{
+    font-size: 9.5pt;
+  }
+
 }
 
 @media only screen and (min-width: 1280px){
@@ -320,5 +646,37 @@ footer{
   header nav a::after{
     bottom: 25px;
   }
+
+  .sliderText h1{
+    font-size: 37pt;
+  }
+
+  .sliderText p{
+    font-size: 15.5pt;
+  }
+
+  .sliderText h1::before{
+    font-size: 10pt;
+  }
+
+  .chiptuningTypes h1{
+    font-size: 30pt;
+  }
+
+}
+
+@media only screen and (min-width: 1600px){
+  .sliderText h1{
+    font-size: 40pt;
+  }
+
+  .sliderText p{
+    font-size: 16pt;
+  }
+
+  .sliderText h1::before{
+    font-size: 10.5pt;
+  }
+
 
 }
