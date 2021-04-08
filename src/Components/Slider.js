@@ -28,7 +28,7 @@ const Slider = () =>{
 
       {textTransitions.map(({ item, props, key }) => (
         <animated.div className="sliderText" style={props} key={key} >
-          <h1><span>A</span>utorizovaný chiptuning</h1>
+          <h1><span>A</span>utorizovaný chiptuning QUANTUM</h1>
           <p>{item.text}</p>
         </animated.div>
       ))}

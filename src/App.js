@@ -12,6 +12,7 @@ import {
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
+import Cookies from "./Components/Cookies";
 import NotFound from "./Components/NotFound";
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
       <main role="main">
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/Cookies" component={Cookies} />
           <Route component={NotFound} />
         </Switch>
       </main>

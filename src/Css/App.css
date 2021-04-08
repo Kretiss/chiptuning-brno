@@ -57,7 +57,7 @@ header{
 }
 
 main{
-  min-height: calc(100vh - 125px);
+  min-height: calc(100vh - 85px);
 }
 
 main a[href^="http"]::after{
@@ -327,6 +327,19 @@ header nav a:is(:hover, .active)::after{
   text-align: inherit;
 }
 
+/*  PAGE  */
+/*  PAGE  */
+/*  PAGE  */
+
+.cookies{
+  text-align: center;
+  padding-top: 30px;
+}
+
+.cookies h2{
+  color: var(--orange);
+}
+
 .index{
   background-color: #F8F8F8;
   overflow: auto;
@@ -502,6 +515,23 @@ footer p{
   color: var(--lighter-gray);
 }
 
+footer a.active{
+  color: var(--orange);
+}
+
+footer a{
+  margin: 0 auto;
+  display: block;
+  width: fit-content;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  color: white;
+}
+
+footer a:hover{
+  color: var(--orange);
+}
+
 
 @media only screen and (min-width: 568px){
   .card{
@@ -530,7 +560,6 @@ footer p{
   .cardText{
     margin-top: 15px;
     margin-left: 35px;
-    text-align: left;
   }
 
 }

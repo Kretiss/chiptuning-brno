@@ -23,7 +23,7 @@ const About = () =>{
         <animated.div className="about" style={spring}>
           <p>Válcová zkušebna - odladěné výkony, doživotní záruka na&nbsp;software, garance a&nbsp;jistota nadnárodní korporace</p>
           <p>Pobočky v&nbsp;53 zemích na&nbsp;celém světě, více než 1500 autorizovaných center po&nbsp;celém světě</p>
-          <p>3000 upravených vozidel měsíčně, 30 denní záruka spokojenosti, individuální chiptuning</p>
+          <p>8000 upravených vozidel měsíčně, 30 denní záruka spokojenosti, individuální chiptuning</p>
         </animated.div>
       </>
     </VisibilitySensor>

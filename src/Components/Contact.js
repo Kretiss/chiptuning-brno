@@ -24,7 +24,7 @@ const Contact = () =>{
     <VisibilitySensor onChange={onChange} active={!isVisible} partialVisibility>
     <>
       <animated.div className="contact" style={spring}>
-        <h2 className="indexHeader2">V Brně máme dvě garáže</h2>
+        <h2 className="indexHeader2">V Brně máme dvě autorizovaná centra</h2>
         <div className="cardsContainer">
           <div className="card">
             <h3>osobní vozy / dodávky</h3>

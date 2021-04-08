@@ -10,7 +10,7 @@ const Header = () => {
   const [isToggled, toggleMenu] = useState(false);
   const menuEffect = useSpring({
     opacity: isToggled ? 1 : .85,
-    height: isToggled ? "60vh" : "0vh",
+    height: isToggled ? "50vh" : "0vh",
   });
 
   return(
