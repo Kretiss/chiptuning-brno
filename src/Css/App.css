@@ -64,7 +64,7 @@ main a[href^="http"]::after{
   font-family: "Font Awesome 5 Free";
   content: "\f35d";
   font-weight: 900;
-  padding-left: 4px;
+  padding-left: 10px;
 }
 
 
@@ -283,6 +283,7 @@ header nav a:is(:hover, .active)::after{
   margin: 0 auto;
   max-width: 90%;
   text-align: center;
+  font-family: 'Open Sans Bold', sans-serif;
 }
 
 .sliderText h1{
@@ -314,12 +315,12 @@ header nav a:is(:hover, .active)::after{
   right: 0;
   margin: 0 auto;
   color: #777;
-  bottom: 100%;
+  bottom: 105%;
   font-size: 8pt;
 }
 
 .sliderText p{
-  font-size: 12.5pt;
+  font-size: 13.5pt;
   margin-top: 3%;
   max-width: 500px;
   margin-left: auto;
@@ -525,7 +526,7 @@ footer a{
   width: fit-content;
   width: -moz-fit-content;
   width: -webkit-fit-content;
-  color: white;
+  color: var(--lighter-gray);
 }
 
 footer a:hover{
@@ -542,7 +543,7 @@ footer a:hover{
 
   .contact .card{
     display: block;
-    width: 48%;
+    width: 46%;
   }
 
   .contact .cardsContainer{
@@ -597,7 +598,7 @@ footer a:hover{
   }
 
   header nav ul a{
-    margin: 0 8px;
+    margin: 0 12px;
     padding: 0 5px;
     line-height: var(--header-height);
   }
@@ -627,7 +628,7 @@ footer a:hover{
   }
 
   .sliderText p{
-    font-size: 13.5pt;
+    font-size: 18pt;
   }
 
   .sliderText h1::before{
@@ -658,11 +659,11 @@ footer a:hover{
   }
 
   .sliderText p{
-    font-size: 15pt;
+    font-size: 22pt;
   }
 
   .sliderText h1::before{
-    font-size: 9.5pt;
+    font-size: 10pt;
   }
 
 }
@@ -681,11 +682,11 @@ footer a:hover{
   }
 
   .sliderText p{
-    font-size: 15.5pt;
+    font-size: 24pt;
   }
 
   .sliderText h1::before{
-    font-size: 10pt;
+    font-size: 11pt;
   }
 
   .chiptuningTypes h1{
@@ -700,12 +701,17 @@ footer a:hover{
   }
 
   .sliderText p{
-    font-size: 16pt;
+    font-size: 26pt;
   }
 
   .sliderText h1::before{
-    font-size: 10.5pt;
+    font-size: 12pt;
   }
 
+}
 
+@media only screen and (min-width: 1800px){
+  :root{
+    --max-continer-width: 1650px;
+  }
 }

@@ -14,9 +14,9 @@ const Slider = () =>{
   const [index, setIndex] = useState(0);
 
   const textTransitions = useTransition(texts[index], (item) => item.id, {
-    from: { opacity: 0, transform: "translate3d(0,-15%,0) scale3d(1,1.2,1)" },
+    from: { opacity: 0, transform: "translate3d(0,-15%,0) scale3d(1,1.1,1)" },
     enter: { opacity: 1, transform: "translate3d(0,0,0) scale3d(1,1,1)" },
-    leave: { opacity: 0, transform: "translate3d(0,50%,0) scale3d(1,0.95,1)" },
+    leave: { opacity: 0, transform: "translate3d(0,15%,0) scale3d(1,0.95,1)" },
     config: config.gentle,
   });
 
@@ -34,7 +34,16 @@ const Slider = () =>{
       ))}
 
       <div className="sliderVideo">
-        <video src={Video} muted playsInline={true} autoPlay={true} loop disablePictureInPicture></video>
+
+        <video
+          src={Video}
+          muted
+          playsInline={true}
+          autoPlay={true}
+          loop
+          disablePictureInPicture
+        />
+
       </div>
 
     </div>

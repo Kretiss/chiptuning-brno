@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollToTop from "./Components/scrollToTop";
 
 import './Css/normalize.css';
 import './Css/App.css';
@@ -9,6 +10,7 @@ import {
   Switch
 } from "react-router-dom";
 
+
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
@@ -18,6 +20,7 @@ import NotFound from "./Components/NotFound";
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       <main role="main">
         <Switch>

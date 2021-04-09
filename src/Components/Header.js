@@ -15,17 +15,30 @@ const Header = () => {
 
   return(
     <header role="banner">
+
       <div className="container">
+
         <NavLink exact to="/" className="logo"><img src={ Logo } alt="logo" /></NavLink>
-        <div className={`navButton ${isToggled ? "active" : "" }`} onClick={ () => toggleMenu(!isToggled)} ><div className="navButtonHamburger"></div></div>
+
+        <div
+          className={`navButton ${isToggled ? "active" : "" }`}
+          onClick={ () => toggleMenu(!isToggled)}
+        >
+          <div className="navButtonHamburger">
+          </div>
+          
+        </div>
+
         <animated.nav style={menuEffect}>
           <ul>
             <li><NavLink exact to="/" onClick={ () => toggleMenu(false)}>ÚVOD</NavLink></li>
-            <li><a href="https://www.quantumchiptuning.cz/kontakt" target="_blank" rel="noreferrer" onClick={ () => toggleMenu(false)}>KONTAKT <i className="fas fa-external-link-alt"></i></a></li>
+            <li><a href="https://www.quantumchiptuning.cz/kontakt" target="_blank" rel="noreferrer" onClick={ () => toggleMenu(false)}>KONTAKT&nbsp;&nbsp;<i className="fas fa-external-link-alt"></i></a></li>
           </ul>
           <a href="https://www.autoslavkov.cz" className="menuSecondLogo" target="_blank" rel="noreferrer" onClick={ () => toggleMenu(false)}><img src={ AutoSlavkovLogo } alt="AutoSlavkov Logo" /></a>
         </animated.nav>
+
       </div>
+
     </header>
   );
 }

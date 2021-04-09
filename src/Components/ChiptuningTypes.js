@@ -21,10 +21,22 @@ const ChiptuningTypes = () =>{
 
 
   return(
-    <VisibilitySensor onChange={onChange} active={!isVisible} partialVisibility>
-    <animated.div className="chiptuningTypes" style={spring}>
+    <VisibilitySensor
+      onChange={onChange}
+      active={!isVisible}
+      partialVisibility
+      offset={{bottom: 180}}
+    >
+
+    <animated.div
+      className="chiptuningTypes"
+      style={spring}
+    >
+
         <h1 className="indexHeader1">Provádíme chiptuning všeho druhu</h1>
+
         <div className="cardsContainer">
+
           <div className="card">
             <div className="cardHeader">
               <img src={ Image1 } alt="chiptuning osobních aut" />
@@ -56,11 +68,13 @@ const ChiptuningTypes = () =>{
               <p>Traktory, kombajny, zemědělské stroje, i&nbsp;u&nbsp;nich lze docílit efektivní optimalizace výkonu a&nbsp;snížení provozních nákladů. Možnost bezplatného vyzkoušení!</p>
               <a href="https://www.quantumchiptuning.cz/autorizovany/chiptuning/zemedelske-stroje/" target="_blank" rel="noreferrer">Najděte svůj AGRO&nbsp;stroj</a>
             </div>
+
           </div>
 
         </div>
 
     </animated.div>
+
     </VisibilitySensor>
   );
 

@@ -17,10 +17,24 @@ const About = () =>{
   });
 
   return(
-    <VisibilitySensor onChange={onChange} active={!isVisible} partialVisibility>
+    <VisibilitySensor
+      onChange={onChange}
+      active={!isVisible}
+      partialVisibility
+      offset={{bottom: 180}}
+    >
       <>
-        <animated.h2 className="indexHeader2" style={spring}>Zajímavosti o&nbsp;nás</animated.h2>
-        <animated.div className="about" style={spring}>
+        <animated.h2
+          className="indexHeader2"
+          style={spring}
+        >
+          Zajímavosti o&nbsp;nás
+        </animated.h2>
+
+        <animated.div
+          className="about"
+          style={spring}
+        >
           <p>Válcová zkušebna - odladěné výkony, doživotní záruka na&nbsp;software, garance a&nbsp;jistota nadnárodní korporace</p>
           <p>Pobočky v&nbsp;53 zemích na&nbsp;celém světě, více než 1500 autorizovaných center po&nbsp;celém světě</p>
           <p>8000 upravených vozidel měsíčně, 30 denní záruka spokojenosti, individuální chiptuning</p>

@@ -21,11 +21,22 @@ const Contact = () =>{
   });
 
   return(
-    <VisibilitySensor onChange={onChange} active={!isVisible} partialVisibility>
+    <VisibilitySensor
+      onChange={onChange}
+      active={!isVisible}
+      partialVisibility
+      offset={{bottom: 180}}
+    >
     <>
-      <animated.div className="contact" style={spring}>
-        <h2 className="indexHeader2">V Brně máme dvě autorizovaná centra</h2>
+      <animated.div
+        className="contact"
+        style={spring}
+      >
+
+        <h2 className="indexHeader2">V Brně Jsou Vám k dispozici dvě autorizovaná centra</h2>
+
         <div className="cardsContainer">
+
           <div className="card">
             <h3>osobní vozy / dodávky</h3>
             <ul>
@@ -36,8 +47,13 @@ const Contact = () =>{
               <li className="bold">Mobil</li>
               <li>+420 776 555 250</li>
             </ul>
-            <iframe src={map1} title="Mapa pobočky pro&nbsp;osobní vozy a&nbsp;dodávky" loading="lazy"></iframe>
+            <iframe
+              src={map1}
+              title="Mapa pobočky pro&nbsp;osobní vozy a&nbsp;dodávky"
+              loading="lazy"
+            />
           </div>
+
           <div className="card">
             <h3>kamiony / autobusy / agro</h3>
             <ul>
@@ -48,9 +64,15 @@ const Contact = () =>{
               <li className="bold">Mobil</li>
               <li>+420 776 555 212</li>
             </ul>
-            <iframe src={map2} title="Mapa pobočky pro&nbsp;kamiony, autobusy a&nbsp;agro stroje" loading="lazy"></iframe>
+            <iframe
+              src={map2}
+              title="Mapa pobočky pro&nbsp;kamiony, autobusy a&nbsp;agro stroje"
+              loading="lazy"
+            />
           </div>
+
         </div>
+
       </animated.div>
       </>
     </VisibilitySensor>
