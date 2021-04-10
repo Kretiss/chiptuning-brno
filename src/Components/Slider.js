@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useTransition, animated, config } from 'react-spring';
 
 import Video from "../images/bgVideo1.mp4";
 
 const Slider = () =>{
+
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const { current: videoElement } = videoRef
+    videoElement.setAttribute('muted', '')
+  }, [])
 
   const texts = [
     {id: 0, text: "Chiptuning osobních aut"},
@@ -35,14 +42,7 @@ const Slider = () =>{
 
       <div className="sliderVideo">
 
-        <video
-          src={Video}
-          muted
-          playsInline={true}
-          autoPlay={true}
-          loop
-          disablePictureInPicture
-        />
+        <video src={Video} ref={videoRef} playsInline autoPlay loop disablePictureInPicture muted />
 
       </div>
 
