@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSpring, animated, config } from 'react-spring';
-import VisibilitySensor from "react-visibility-sensor";
+import { useInView } from 'react-intersection-observer';
 
 import Image1 from "../images/chip-auta-2.svg";
 import Image2 from "../images/chip-kamiony-2.svg";
@@ -8,32 +8,28 @@ import Image3 from "../images/chip-traktory-2.svg";
 
 const ChiptuningTypes = () =>{
 
-  const [isVisible, setVisibility] = useState(false);
-  const onChange = (visibility) => {
-    setVisibility(visibility);
-  };
+  const { ref, inView } = useInView({
+    rootMargin: "-180px 0px",
+    triggerOnce: true,
+  });
+
 
   const spring = useSpring({
     from: {opacity: 0, transform: "translate3d(0,20px,0)"},
     to: {
-      opacity: isVisible ? 1 : 0,
-      transform: `translate3d(0,${isVisible ? 0 : 20}px,0)`,
+      opacity: inView ? 1 : 0,
+      transform: `translate3d(0,${inView ? 0 : 20}px,0)`,
     },
     config: {...config.gentle},
   });
 
 
   return(
-    <VisibilitySensor
-      onChange={onChange}
-      active={!isVisible}
-      partialVisibility
-      offset={{bottom: 180}}
-    >
 
     <animated.div
       className="chiptuningTypes"
       style={spring}
+      ref={ref}
     >
 
         <h1 className="indexHeader1">Provádíme chiptuning všeho druhu</h1>
@@ -78,7 +74,7 @@ const ChiptuningTypes = () =>{
 
     </animated.div>
 
-    </VisibilitySensor>
+
   );
 
 }
