@@ -5,12 +5,28 @@ import Video from "../images/bgVideo1.mp4";
 
 const Slider = () =>{
 
-  const videoRef = useRef(null)
+  const videoRef = useRef(null);
+  const [showHeader, setShowHeader] = useState(false);
+
+  useEffect(() => {
+    const headerInterval = setInterval(() => setShowHeader(true), 500);
+    return () => clearInterval(headerInterval);
+
+  }, []);
 
   useEffect(() => {
     const { current: videoElement } = videoRef
     videoElement.setAttribute('muted', '')
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setIndex((state) => (state + 1) % 3);
+    }, 4000);
+
+    return () => clearInterval(slideInterval);
+
+  }, []);
 
   const texts = [
     {id: 0, text: "Chiptuning osobních aut"},
@@ -20,16 +36,13 @@ const Slider = () =>{
 
   const [index, setIndex] = useState(0);
 
-  const textTransitions = useTransition(texts[index], {
+  const textTransitions = useTransition(showHeader ? texts[index] : [], {
     from: { opacity: 0, transform: "translate3d(0,-15%,0) scale3d(1,1.1,1)" },
     enter: { opacity: 1, transform: "translate3d(0,0,0) scale3d(1,1,1)" },
     leave: { opacity: 0, transform: "translate3d(0,15%,0) scale3d(1,0.95,1)" },
     config: config.gentle,
     key: texts[index].id,
   });
-
-
-  useEffect(() => void setInterval(() => setIndex((state) => (state + 1) % 3), 4000), []);
 
   return(
     <div className="sliderContainer">
