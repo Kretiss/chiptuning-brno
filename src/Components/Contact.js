@@ -15,9 +15,12 @@ const Contact = () =>{
   };
 
   const spring = useSpring({
-    opacity: isVisible ? 1 : 0,
-    transform: `translate3d(${isVisible ? 0 : 20}px,0,0)`,
-    config: config.gentle,
+    from: {opacity: 0, transform: "translate3d(20px,0,0)"},
+    to: {
+      opacity: isVisible ? 1 : 0,
+      transform: `translate3d(${isVisible ? 0 : 20}px,0,0)`,
+    },
+    config: {...config.gentle},
   });
 
   return(

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
+import { Helmet } from "react-helmet";
 
 
 const Cookies = () =>{
@@ -10,7 +11,10 @@ const Cookies = () =>{
 
   const [show, setShow] = useState(false);
   const effect = useSpring({
-    opacity: show ? 1 : 0,
+    from: {opacity: 0},
+    to: {
+      opacity: show ? 1 : 0,
+    }
   });
 
   return(
@@ -18,6 +22,9 @@ const Cookies = () =>{
         className="container cookies"
         style={effect}
       >
+        <Helmet>
+          <title>Autorizovaný chiptuning QUANTUM Brno - Cookies</title>
+        </Helmet>
         <h2>Soubory cookies</h2>
         <p>Náš web používá soubory cookies od Google Analytics (_ga).</p>
         <p>Tyto cookies slouží pro měření chování návštěvníků na webu.</p>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 
 import Slider from "./Slider"
 import About from "./About"
@@ -11,6 +12,10 @@ const Home = () =>{
 
   return(
     <>
+      <Helmet>
+        <title>Autorizovaný chiptuning QUANTUM Brno</title>
+      </Helmet>
+
       <Slider />
 
       <div className="index">

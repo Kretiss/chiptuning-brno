@@ -9,8 +9,11 @@ const Header = () => {
 
   const [isToggled, toggleMenu] = useState(false);
   const menuEffect = useSpring({
-    opacity: isToggled ? 1 : .85,
-    height: isToggled ? "50vh" : "0vh",
+    from: {opacity: 0, height: "0vh"},
+    to: {
+      opacity: isToggled ? 1 : .85,
+      height: isToggled ? "50vh" : "0vh",
+    },
   });
 
   return(
@@ -26,7 +29,7 @@ const Header = () => {
         >
           <div className="navButtonHamburger">
           </div>
-          
+
         </div>
 
         <animated.nav style={menuEffect}>

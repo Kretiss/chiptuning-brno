@@ -20,11 +20,12 @@ const Slider = () =>{
 
   const [index, setIndex] = useState(0);
 
-  const textTransitions = useTransition(texts[index], (item) => item.id, {
+  const textTransitions = useTransition(texts[index], {
     from: { opacity: 0, transform: "translate3d(0,-15%,0) scale3d(1,1.1,1)" },
     enter: { opacity: 1, transform: "translate3d(0,0,0) scale3d(1,1,1)" },
     leave: { opacity: 0, transform: "translate3d(0,15%,0) scale3d(1,0.95,1)" },
     config: config.gentle,
+    key: texts[index].id,
   });
 
 
@@ -33,9 +34,11 @@ const Slider = () =>{
   return(
     <div className="sliderContainer">
 
-      {textTransitions.map(({ item, props, key }) => (
-        <animated.div className="sliderText" style={props} key={key} >
-          <h1><span>A</span>utorizovaný chiptuning QUANTUM</h1>
+      {textTransitions((props, item) => (
+        <animated.div className="sliderText" style={props}>
+          <h1>
+            <span>A</span>utorizovaný chiptuning QUANTUM
+          </h1>
           <p>{item.text}</p>
         </animated.div>
       ))}

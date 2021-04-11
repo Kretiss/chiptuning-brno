@@ -15,7 +15,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
 import Cookies from "./Components/Cookies";
-import Error404 from "./Components/Error404";
+import NotFound from "./Components/NotFound";
 
 const App = () => {
   return (
@@ -26,7 +26,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Cookies" component={Cookies} />
-          <Route component={Error404} />
+          <Route component={NotFound} />
         </Switch>
       </main>
       <Footer />

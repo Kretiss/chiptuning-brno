@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Error404 = () => {
+const NotFound = () => {
   return(
     <div className="didntFound">
       <h2>Kód 404</h2>
@@ -10,4 +10,4 @@ const Error404 = () => {
   );
 }
 
-export default Error404;
+export default NotFound;
