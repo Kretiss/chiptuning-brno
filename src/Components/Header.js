@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from "react-router-dom";
 import { useSpring, animated } from 'react-spring';
 
@@ -6,6 +6,24 @@ import Logo from "../images/Quantum-chiptuning-logo.png";
 import AutoSlavkovLogo from "../images/auto-slavkov.png";
 
 const Header = () => {
+
+  const node = useRef();
+  const handleClick = e => {
+    if (node.current.contains(e.target)) {
+      // inside click
+      return;
+    }
+    // outside click
+    toggleMenu(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, []);
 
   const [isToggled, toggleMenu] = useState(false);
   const menuEffect = useSpring({
@@ -17,11 +35,11 @@ const Header = () => {
   });
 
   return(
-    <header role="banner">
+    <header role="banner" ref={node}>
 
       <div className="container">
 
-        <NavLink exact to="/" className="logo"><img src={ Logo } alt="logo" /></NavLink>
+        <NavLink exact to="/" className="logo" onClick={ () => toggleMenu(false)}><img src={ Logo } alt="logo" /></NavLink>
 
         <div
           className={`navButton ${isToggled ? "active" : "" }`}

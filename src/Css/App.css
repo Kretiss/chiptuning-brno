@@ -5,6 +5,7 @@
 	src:  url('../webfonts/OpenSans-Regular.woff2') format('woff2'),
         url('../webfonts/OpenSans-Regular.woff') format('woff'),
         url('../webfonts/OpenSans-Regular.ttf') format('ttf');
+  font-display: swap;
 }
 
 @font-face {
@@ -14,6 +15,7 @@
 	src:  url('../webfonts/OpenSans-SemiBold.woff2') format('woff2'),
         url('../webfonts/OpenSans-SemiBold.woff') format('woff'),
         url('../webfonts/OpenSans-SemiBold.ttf') format('ttf');
+  font-display: swap;
 }
 
 @font-face {
@@ -23,6 +25,7 @@
 	src:  url('../webfonts/OpenSans-Italic.woff2') format('woff2'),
         url('../webfonts/OpenSans-Italic.woff') format('woff'),
         url('../webfonts/OpenSans-Italic.ttf') format('ttf');
+  font-display: swap;
 }
 
 *,
@@ -82,6 +85,7 @@ main a[href^="http"]::after{
 .logo,
 .logo img{
   height: calc(var(--header-height)/1.2);
+  width: auto;
 }
 
 .menuSecondLogo{
@@ -417,6 +421,7 @@ header nav a:is(:hover, .active)::after{
 
 .cardHeader img{
   width: 160px;
+  height: auto;
   margin: 0 auto;
 }
 

@@ -44,11 +44,16 @@ const Contact = () =>{
             <li className="bold">Mobil</li>
             <li>+420 776 555 250</li>
           </ul>
-          <iframe
-            src={map1}
-            title="Mapa pobočky pro&nbsp;osobní vozy a&nbsp;dodávky"
-            loading="lazy"
-          />
+          {
+            inView
+            ? <iframe
+                src={map1}
+                title="Mapa pobočky pro&nbsp;osobní vozy a&nbsp;dodávky"
+                loading="lazy"
+              />
+            : null
+          }
+
         </div>
 
         <div className="card">
@@ -61,11 +66,15 @@ const Contact = () =>{
             <li className="bold">Mobil</li>
             <li>+420 776 555 212</li>
           </ul>
-          <iframe
-            src={map2}
-            title="Mapa pobočky pro&nbsp;kamiony, autobusy a&nbsp;agro stroje"
-            loading="lazy"
-          />
+          {
+            inView
+            ? <iframe
+                src={map2}
+                title="Mapa pobočky pro&nbsp;kamiony, autobusy a&nbsp;agro stroje"
+                loading="lazy"
+              />
+          : null
+          }
         </div>
 
       </div>
