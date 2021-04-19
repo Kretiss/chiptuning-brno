@@ -6,7 +6,7 @@ const Footer = () => {
   return(
     <footer role="contentinfo">
       <div className="container">
-        <NavLink to="/Cookies">Cookies</NavLink>
+        <NavLink to="/cookies">Cookies</NavLink>
         <p>&copy; 2021 chiptuning-brno.cz</p>
       </div>
     </footer>

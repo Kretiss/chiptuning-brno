@@ -25,7 +25,7 @@ const App = () => {
       <main role="main">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/Cookies" component={Cookies} />
+          <Route path="/cookies" component={Cookies} />
           <Route component={NotFound} />
         </Switch>
       </main>
