@@ -1,9 +1,11 @@
 import React from 'react';
 import ScrollToTop from "./Components/scrollToTop";
 
-import './Css/normalize.css';
+import 'normalize.css';
 import './Css/App.css';
-import './Css/fontAwesome.css';
+import '@fortawesome/fontawesome-free/js/solid.min.js'
+import '@fortawesome/fontawesome-free/js/fontawesome.min.js'
+import '@fortawesome/fontawesome-free/css/solid.min.css'
 import {
   BrowserRouter,
   Route,

@@ -17,14 +17,6 @@ const Header = () => {
     toggleMenu(false);
   };
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClick);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClick);
-    };
-  }, []);
-
   const [isToggled, toggleMenu] = useState(false);
   const menuEffect = useSpring({
     from: {opacity: 0, height: "0vh"},
@@ -33,6 +25,23 @@ const Header = () => {
       height: isToggled ? "50vh" : "0vh",
     },
   });
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    isToggled ? document.body.style.overflow = 'hidden'
+              : document.body.style.overflow = 'unset'
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isToggled]);
 
   return(
     <header role="banner" ref={node}>

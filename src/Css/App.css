@@ -63,8 +63,14 @@ main{
   min-height: calc(100vh - 85px);
 }
 
+
 main a[href^="http"]::after{
   font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
   content: "\f35d";
   font-weight: 900;
   padding-left: 10px;
@@ -155,12 +161,12 @@ main a[href^="http"]::after{
 }
 
 .navButton.active .navButtonHamburger::before{
-  transform: rotate(135deg) translateX(7px) translateY(4px);
+  transform: rotate(135deg) translateX(3px) translateY(2px);
   width: 25px;
 }
 
 .navButton.active .navButtonHamburger::after{
-  transform: rotate(-135deg) translateX(-7px) translateY(4px);
+  transform: rotate(-135deg) translateX(-9px) translateY(8px);
   width: 25px;
 }
 
