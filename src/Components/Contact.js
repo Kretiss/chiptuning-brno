@@ -5,9 +5,8 @@ import { useInView } from 'react-intersection-observer';
 
 const Contact = () =>{
 
-  const map1 = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d652.4037961642953!2d16.87525201812269!3d49.15093032378249!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712e88670a9a481%3A0x58e5c6e64145c801!2sSlov%C3%A1kova%201428%2C%20684%2001%20Slavkov%20u%20Brna%2C%20%C4%8Cesko!5e0!3m2!1scs!2sus!4v1617752657465!5m2!1scs!2sus";
-  const map2 = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4389.555524690489!2d16.87893238199763!3d49.14276373613659!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712e87f078b0145%3A0xeb78618f0cba6a2a!2s%C4%8Ceskoslovensk%C3%A9%20arm%C3%A1dy%201213%2C%20684%2001%20Slavkov%20u%20Brna%2C%20%C4%8Cesko!5e0!3m2!1scs!2sus!4v1617778771025!5m2!1scs!2sus";
-
+  const map1 = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d461.31980467519077!2d16.875192393972405!3d49.150859838416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xed0c82fc450afd78!2sAutoslavkov!5e0!3m2!1scs!2scz!4v1619280820971!5m2!1scs!2scz";
+  const map2 = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2194.7753565609282!2d16.87918378857249!3d49.14281805683453!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x753fb91edeaff950!2sQUANTUM%20-%20Autorizovan%C3%BD%20chiptuning%20Brno%20%E2%80%93%20kamiony%2Fautobusy%2Fagro!5e0!3m2!1scs!2scz!4v1619280422227!5m2!1scs!2scz";
 
   const { ref, inView } = useInView({
     rootMargin: "-180px 0px",
