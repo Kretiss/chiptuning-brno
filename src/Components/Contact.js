@@ -67,7 +67,7 @@ const Contact = () =>{
             <li className="bold">Mobil</li>
             <li>+420 776 555 212</li>
             <li className="bold">Otevírací doba</li>
-            <li>Po - Pá: 7:45 - 17:00</li>
+            <li>Po - Pá: 9:00 - 17:00</li>
           </ul>
           {
             inView
