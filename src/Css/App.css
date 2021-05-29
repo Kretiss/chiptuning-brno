@@ -195,7 +195,7 @@ header nav{
   top: var(--header-height);
   left: 0;
   right: 0;
-  box-shadow: 0px 2px 3px var(--orange);
+  box-shadow: 0 2px 3px var(--orange);
   overflow: auto;
   background-color: var(--darker-gray);
   z-index: 10;
@@ -285,8 +285,8 @@ header nav a:is(:hover, .active)::after{
 
 .sliderVideo img{
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -396,7 +396,7 @@ header nav a:is(:hover, .active)::after{
   counter-increment: paragraph;
   content: counter(paragraph);
   position: absolute;
-  top: 0px;
+  top: 0;
   left: -10px;
   font-size: 30pt;
   color: var(--orange);
@@ -536,7 +536,7 @@ footer{
 
 footer p{
   text-align: center;
-  color: var(--lighter-gray);
+  color: #888;
 }
 
 footer a.active{
@@ -549,7 +549,7 @@ footer a{
   width: fit-content;
   width: -moz-fit-content;
   width: -webkit-fit-content;
-  color: var(--lighter-gray);
+  color: #888;
 }
 
 footer a:hover{
@@ -603,7 +603,6 @@ footer a:hover{
   }
 
   header nav{
-    display: block;
     position: static;
     height: var(--header-height) !important;
     overflow: hidden;
@@ -631,7 +630,7 @@ footer a:hover{
   }
 
   .menuSecondLogo::after{
-    bottom: 0px;
+    bottom: 0;
   }
 
   .menuSecondLogo{

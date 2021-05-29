@@ -31,7 +31,7 @@ const Slider = () =>{
   });
 
   useEffect(() => {
-    const headerInterval = setInterval(() => setShowHeader(true), 500);
+    const headerInterval = setInterval(() => setShowHeader(true), 250);
     return () => clearInterval(headerInterval);
 
   }, []);

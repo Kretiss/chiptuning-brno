@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 
 const Contact = () =>{
 
-  const map1 = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d461.31980467519077!2d16.875192393972405!3d49.150859838416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xed0c82fc450afd78!2sAutoslavkov!5e0!3m2!1scs!2scz!4v1619280820971!5m2!1scs!2scz";
+  const map1 = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1304.8064512927522!2d16.874747626308054!3d49.150973647621946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712e9be1edda5b5%3A0x2abfb1928c2aec2d!2sQUANTUM%20-%20Autorizovan%C3%BD%20chiptuning%20-%20osobn%C3%AD%20vozidla%20%2F%20dod%C3%A1vky!5e0!3m2!1scs!2scz!4v1620913917290!5m2!1scs!2scz";
   const map2 = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2194.7753565609282!2d16.87918378857249!3d49.14281805683453!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x753fb91edeaff950!2sQUANTUM%20-%20Autorizovan%C3%BD%20chiptuning%20Brno%20%E2%80%93%20kamiony%2Fautobusy%2Fagro!5e0!3m2!1scs!2scz!4v1619280422227!5m2!1scs!2scz";
 
   const { ref, inView } = useInView({
@@ -29,7 +29,7 @@ const Contact = () =>{
       ref={ref}
     >
 
-      <h2 className="indexHeader2">V Brně Jsou Vám k dispozici dvě autorizovaná centra</h2>
+      <h2 className="indexHeader2">V Brně jsou Vám k dispozici dvě autorizovaná centra</h2>
 
       <div className="cardsContainer">
 
@@ -42,6 +42,8 @@ const Contact = () =>{
             <li>684 01 Slavkov u&nbsp;Brna</li>
             <li className="bold">Mobil</li>
             <li>+420 776 555 250</li>
+            <li className="bold">Otevírací doba</li>
+            <li>Po - Pá: 9:00 - 16:00</li>
           </ul>
           {
             inView
@@ -64,6 +66,8 @@ const Contact = () =>{
             <li>684 01 Slavkov u&nbsp;Brna</li>
             <li className="bold">Mobil</li>
             <li>+420 776 555 212</li>
+            <li className="bold">Otevírací doba</li>
+            <li>Po - Pá: 7:45 - 17:00</li>
           </ul>
           {
             inView

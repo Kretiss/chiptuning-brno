@@ -26,7 +26,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../autoslavkov" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -43,6 +43,9 @@
       <workItem from="1619184525531" duration="3073000" />
       <workItem from="1619249856371" duration="27000" />
       <workItem from="1619280482937" duration="728000" />
+      <workItem from="1619782853232" duration="696000" />
+      <workItem from="1619985221080" duration="733000" />
+      <workItem from="1620030290982" duration="38000" />
     </task>
     <servers />
   </component>
