@@ -64,15 +64,7 @@ main{
 }
 
 
-main a[href^="http"]::after{
-  font-family: "Font Awesome 5 Free";
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  content: "\f35d";
-  font-weight: 900;
+main a[href^="http"] svg{
   padding-left: 10px;
 }
 
@@ -448,8 +440,6 @@ header nav a:is(:hover, .active)::after{
 .cardText a{
   display: block;
   width: fit-content;
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
   padding: 8px 10px;
   margin: 10px auto;
   background-color: var(--orange);
@@ -547,8 +537,6 @@ footer a{
   margin: 0 auto;
   display: block;
   width: fit-content;
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
   color: #888;
 }
 

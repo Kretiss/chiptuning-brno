@@ -1,13 +1,12 @@
-import React from 'react';
-
+import React from 'react'
 
 const NotFound = () => {
-  return(
+  return (
     <div className="didntFound">
       <h2>Kód 404</h2>
       <p>Stránka nenalezena</p>
     </div>
-  );
+  )
 }
 
-export default NotFound;
+export default NotFound
