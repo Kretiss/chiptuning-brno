@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const WhyWe = () => {
   const { ref, inView } = useInView({
-    rootMargin: '-180px 0px',
+    rootMargin: '-100px 0px',
     triggerOnce: true,
   })
 

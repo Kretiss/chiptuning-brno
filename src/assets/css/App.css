@@ -68,6 +68,10 @@ main a[href^="http"] svg{
   padding-left: 10px;
 }
 
+h1, h2 {
+  font-family: 'Open Sans Bold', sans-serif;
+}
+
 
 .container{
   margin: 0 auto;
@@ -106,11 +110,11 @@ main a[href^="http"] svg{
   color: var(--menuBtnColor);
   border-radius: 4px;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   font-size: 1.7em;
   transition: all 0.3s;
+  background-color: transparent;
+  border:0;
 }
 
 .navButtonHamburger{
@@ -244,7 +248,7 @@ header nav a:is(:hover, .active)::after{
 
 .sliderContainer{
   width: 100%;
-  height: calc(100vh - var(--header-height));
+  height: calc(70vh - var(--header-height));
   overflow: hidden;
   text-align: center;
   position: relative;
@@ -427,7 +431,7 @@ header nav a:is(:hover, .active)::after{
 }
 
 .cardHeader img{
-  width: 160px;
+  width: 140px;
   height: auto;
   margin: 0 auto;
 }
@@ -656,6 +660,10 @@ footer a:hover{
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+  }
+
+  .sliderContainer {
+    height: calc(100vh - var(--header-height));
   }
 
   .card{

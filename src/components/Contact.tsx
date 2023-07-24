@@ -9,7 +9,7 @@ const Contact = () => {
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2194.7753565609282!2d16.87918378857249!3d49.14281805683453!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x753fb91edeaff950!2sQUANTUM%20-%20Autorizovan%C3%BD%20chiptuning%20Brno%20%E2%80%93%20kamiony%2Fautobusy%2Fagro!5e0!3m2!1scs!2scz!4v1619280422227!5m2!1scs!2scz'
 
   const { ref, inView } = useInView({
-    rootMargin: '-180px 0px',
+    rootMargin: '-100px 0px',
     triggerOnce: true,
   })
 

@@ -2,17 +2,17 @@ import React, { useRef, useState, useEffect } from 'react'
 import { useTransition, animated, config } from '@react-spring/web'
 
 import Video from '../assets/images/bgVideo1.mp4'
-import Image from '../assets/images/slide1.jpg'
+import Image from '../assets/images/slide2.jpg'
 
 const Slider = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   const [index, setIndex] = useState(0)
   const [showHeader, setShowHeader] = useState(false)
-  const [isDesktop, setDesktop] = useState(window.innerWidth >= 768)
+  const [isDesktop, setDesktop] = useState(window.innerWidth >= 1024)
 
   const updateMedia = () => {
-    setDesktop(window.innerWidth >= 768)
+    setDesktop(window.innerWidth >= 1024)
   }
 
   const texts = [
@@ -58,12 +58,12 @@ const Slider = () => {
   return (
     <div className="sliderContainer">
       {textTransitions((props, item) => (
-        <animated.div className="sliderText" style={props}>
+        <div className="sliderText">
           <h1>
             <span>A</span>utorizovaný chiptuning QUANTUM
           </h1>
-          <p>{item.text}</p>
-        </animated.div>
+          <animated.p style={props}>{item.text}</animated.p>
+        </div>
       ))}
 
       <div className="sliderVideo">

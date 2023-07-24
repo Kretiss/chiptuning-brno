@@ -10,7 +10,7 @@ import Image3 from '../assets/images/chip-traktory-2.svg'
 
 const ChiptuningTypes = () => {
   const { ref, inView } = useInView({
-    rootMargin: '-180px 0px',
+    rootMargin: '-100px 0px',
     triggerOnce: true,
   })
 
